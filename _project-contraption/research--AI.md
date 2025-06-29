@@ -11,6 +11,4 @@ GPT-4's performance improves dramatically the second it has access to the right 
 
 ## AI Use Cases
 
-- document code
-- analyze code
 - translate code from one language to another
