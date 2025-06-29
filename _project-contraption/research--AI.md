@@ -12,3 +12,5 @@ GPT-4's performance improves dramatically the second it has access to the right 
 ## AI Use Cases
 
 - translate code from one language to another
+
+https://blog.google/technology/developers/introducing-gemini-cli-open-source-ai-agent/
