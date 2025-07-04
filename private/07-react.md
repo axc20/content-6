@@ -14,7 +14,4 @@
   - [render prop pattern](https://stackoverflow.com/questions/52552710/use-of-context-api-vs-cloneelement-for-passing-down-props-for-direct-descendent)
 - context
   - [cloneElement vs createcContext | RadioGroup](https://github.com/uber/baseweb/issues/131)
-  - [Why does useContext work without Context.Provider?](https://stackoverflow.com/questions/72004852/why-does-usecontext-work-without-context-provider)
   - avoid props drilling
-- misc
-  - [isValidElement()](https://reactjs.org/docs/react-api.html#isvalidelement)

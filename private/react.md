@@ -53,7 +53,3 @@ function useSpicyReducer(reducer, initialState, executeEffect) {
 ```
 
 Thus, action effects happen in state transitions, which happen to be executed at same time as event handlers.
-
-## Render as you fetch with Suspense
-
-?

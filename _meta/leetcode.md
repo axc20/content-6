@@ -1,24 +1,3 @@
-# Leetcode
-
-## Pass LC Filter
-
-- **Understand and recognize the 15-20 patterns.**
-  - Get the basics of data structures down, and know the time complexity of operations. 90% of the time, heap, set, or map is the way to go, and you can usually figure out which one the question wants by thinking about time complexities.
-  - Python is good for leetcode because it is fast to iterate, has loose typing, and the array/string slicing trivializes a lot of common operations.
-- You want to be able to quickly see a problem and think:
-  1. What is the input?
-  2. What is the expected output?
-  3. "I could probably solve this with X."
-- Solve any **medium** in under 20 minutes while being able to explain what you're doing. Most of the time should be spent **talking** and **designing** - what optimal algorithm may look like, what data structures to use, etc. Coding is the easiest/fastest part. Run a couple test cases on your own, and include edge cases.
-- Use **REACTO** to explaing your thinking process as you tackle the problem:
-  - **Repeat** question
-  - Come up with **examples**
-  - Outline your **approach**
-  - **Code** your solution
-  - **Test** your code (manually run through it if on whiteboard)
-  - Then, and only then, **optimize**
-- **A LC problem a day** for the next few months is better than cramming. Less stressful and you're absorbing the patterns better over a longer period of time. You could even structure it to focus on one pattern a week (look up 14 leetcode patterns). DO NOT code right away - always plan it out on paper, account for every scenario, and then code!
-
 ## Patterns
 
 - Tier 1
