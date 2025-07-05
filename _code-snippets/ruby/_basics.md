@@ -33,31 +33,6 @@ account_to_portfolio_id_mapping = {
 output = account_to_portfolio_id_mapping.values.flat_map(&:to_a).uniq
 ```
 
-## lambdas
-
-- useful when you need to encapsulate a block of code in a reusable and callable object
-  - anonymous functions: small, self-contained blocks of code that can be passed around as objects
-  - callbacks and event handlers in event-driven programming: pass as argument to a method to be executed when a specific event or condition occurs
-  - functional programming: work with functions as first-class citizens
-  - iteration and data manipulation: use with iteration methods like `each`, `map`, `select`, `reduce`
-  - closures: lambdas capture surrounding environment including local variables and constants
-  - delayed execution: defer execution until a later time, useful for lazy evaluation or delaying expensive computations until they are needed
-  - DSL (domain-specific languages): useful in creating internal DSLs to solve specific problems within a particular domain
-
-```ruby
-outer_lambda = lambda do
-  puts 'outer lambda executing'
-
-  inner_lambda = lambda do
-    puts 'inner lambda executing'
-  end
-
-  inner_lambda.call
-end
-
-outer_lambda.call
-```
-
 ## case, when
 
 ```ruby
