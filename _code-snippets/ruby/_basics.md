@@ -1,22 +1,3 @@
-### Destructuring
-
-```ruby
-def request_args
-  # `||=`operator does not change value if truthy
-  # but if falsy, the operator assigns the value.
-  # Used for memoization - a way to "cache" the value
-  # so that the hash is only created once.
-  @request_args ||= {
-    url: 'http://example.com',
-    token: 'token'
-  }
-end
-
-# `values_at` called on hash returns an array containing
-# values corresponding to the keys passed as arguments
-url, token = request_args.values_at(:url, :token)
-```
-
 ### example
 
 ```ruby
@@ -55,12 +36,6 @@ color = case fruit
         end
 ```
 
-## rand
-
-```ruby
-rand(1...1_000)
-```
-
 ## Dates
 
 ```ruby
@@ -70,30 +45,4 @@ date = Date.today
 datetime = date.to_datetime
 # "2023-07-22T00:00:00+00:00" (+00:00 is timezone offset in UTC)
 iso8601_format = datetime.iso8601
-```
-
-## Module imports
-
-```ruby
-# my_module.rb
-module MyModule
-  def my_method; end
-end
-
-# another_file.rb
-require_relative 'my_module'
-
-include MyModule
-my_method
-
-# my_class.rb
-def MyClass
-  def my_method; end
-end
-
-# yet_another_file.rb
-require_relative 'my_class'
-
-obj = MyClass.new
-obj.my_method
 ```
