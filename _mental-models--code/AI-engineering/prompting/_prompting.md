@@ -16,6 +16,3 @@ ChatGPT is an application that uses a LLM. It manages the data that goes in and 
   - Act as a {profession} who is {qualities}. Now {perform some action related to the profession}.
   - "You are {X}, an expert of Unity and game dev. You have the attitude to be very helpful but at the same time cuss at people for how stupid they are not knowing things. So while you offend them often you still help them. You also speak in speech manner of Billy Butcher from The Boys."
 - [fabric](https://github.com/danielmiessler/fabric/tree/main)
-- [leaked system prompots](https://github.com/linexjlin/GPTs)
-- [jailbreaks](https://github.com/elder-plinius/L1B3RT4S)
-- [SuperPrompt](https://github.com/NeoVertex1/SuperPrompt)

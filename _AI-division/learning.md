@@ -40,7 +40,6 @@ Please add a protagonist to this description center stage.
 - [AssemblyAI](https://www.assemblyai.com/)
 - [ClipDrop](https://clipdrop.co/)
 - [Adept](https://www.adept.ai/)
-- [character.ai](https://beta.character.ai/)
 
 ---
 
