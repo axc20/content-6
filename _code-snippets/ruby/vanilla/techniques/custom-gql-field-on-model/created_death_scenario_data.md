@@ -1,27 +1,9 @@
 # created_death_scenario_data
 
 ```ruby
-# (1) Add the custom field to the type file for the model
-module Types
-  class EstateType < Types::BaseObject
-    # ...other fields
-    field :created_death_scenario_data, Types::DeathScenarioDataType, null: true
-  end
-end
-
 # (2) Add a corresponding method to the model (probably best to do it within a concern)
 module EstateActionMutations
-  extend ActiveSupport::Concern
-  include DocumentAbstraction::DistributionsHelper
-
-  def created_death_scenario_data; end
-
   def add_disposition_templates
-    # ...method logic
-    created_disposition_templates = []
-    # ...more method logic
-    created_disposition_templates << dt
-
     # return for this action mutation (add_disposition_templates)
     {
       target_method: :created_death_scenario_data,
@@ -42,41 +24,6 @@ end
 ```
 
 ```ruby
-module Types
-  class EstateType < Types::BaseObject
-    # ...other fields
-    field :source_fiduciaries_copy_options, [SourceCopyOptionType], null: false
-
-    def source_fiduciaries_copy_options
-      # create a virtual DT to be able to call the source_fiduciaries_copy_options method
-      DispositionTemplate.new(estate: object).source_fiduciaries_copy_options
-    end
-  end
-end
-
-module Types
-  class DispositionTemplateType < Types::BaseObject
-    # ...other fields
-    field :source_notes_copy_options, [SourceCopyOptionType], null: false
-    field :source_fiduciaries_copy_options, [SourceCopyOptionType], null: false
-  end
-end
-
-module Types
-  class SourceCopyOptionType < Types::BaseObject
-    field :model_id, ID, null: false
-    field :model_type, Types::SourceNotesModelTypeEnum, null: false
-    field :label, String, null: false
-    field :is_general_note, Boolean, null: true
-  end
-end
-
-class DispositionTemplate < ApplicationRecord
-  # ...
-  include DispositionTemplateAbstractionHelpers
-  # ...
-end
-
 module DispositionTemplateAbstractionHelpers
   extend ActiveSupport::Concern
 
