@@ -35,56 +35,6 @@
 
 ## Markup
 
-### ARIA
-
-#### `aria-busy`
-
-`aria-busy` indicates whether an element is being modified, as assistive technologies may want to wait until the modifications are complete before exposing them to the user.
-
-#### `role="alert"`
-
-The `alert` role should only read out content that has changed or to bring it to your immediate attention. It provides time-sensitive information and conveys that an element has been dynamically updated. Screen readers may interrupt their reading flow with content have a role of `alert`. This role is equivalent to `aria-live="assertive"`.
-
-One way to trigger an alert would be to dynamically add an element with this role:
-
-```js
-let zipCodeAlert = document.createElement('div');
-let zipCodeAlertText = document.createTextNode(
-  'Please enter a valdid zip code.'
-);
-
-zipCodeAlert.setAttribute('role', 'alert');
-zipCodeAlert.appendChild(zipCodeAlertText);
-document.body.appendChild(zipCodeAlert);
-```
-
-Another way to trigger an alert is to insert a message into a container that has the role. The container is hidden and empty until an event triggers the script that populates it with content.
-
-```css
-[role='alert']:empty {
-  display: none;
-}
-[role='alert'] {
-  border: 2px solid red;
-}
-```
-
-```html
-<div class="error-msg" id="zipCodeAlert" role="alert"></div>
-```
-
-```js
-let errorContainer = document.getElementById('zipCodeAlert');
-let errorMsg = '<p>Please enter a valid zip code.</p>.';
-
-errorContainer.innerHTML = errorMsg;
-```
-
-Alerts are disruptive by definition, so they should be used only if necessary. Having a lot unnecessary errors interrupting the flow of the page will create a bad experience.
-
-- [Alert Example (W3C)](https://www.w3.org/TR/wai-aria-practices-1.1/examples/alert/alert.html)
-- [ARIA: alert role (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Alert_Role)
-
 #### `role="grid"`
 
 The `grid` role is used for a widget that contains one or more rows of cells. Some or all of the cells are focusable by using the keyboard, primarily the directional arrow keys. The `grid` role establishes a relationship between grouped elements - visually for those with vision and semantically for those using screen readers. See [Grid (W3C)](https://www.w3.org/TR/wai-aria-1.1/#grid) and [Grid Role (MDN)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/Grid_Role).
