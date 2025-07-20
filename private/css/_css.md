@@ -1,30 +1,7 @@
-# CSS
-
-- Box model
-  - Border: around element; specify width, color, style
-  - Padding: space between content and element's boundary
-  - Margin: space between elements
-  - Width of element: border + padding + width
-- Flexbox
-  - main axis: defined by flex direction: `row`, `row-reverse`, `column`, `column-reverse`
-  - cross axis: runs perpendicular to main axis
-- Alignment
-  - `justify-items`/`align-items`: align content in a grid along row/column; `start`, `end`, `center`, `stretch`
-  - `justify-content`/`align-content`: justifies all grid content on row/column axis when total grid size is smaller than container; `start`, `end`, `center`, `stretch`, `space-around`, `space-between`, `space-evenly`
-- (?) container queries
-
 ```css
 /* for transparent images, create a shadow on image's content */
 .class {
   filter: drop-shadow(2px 4px 8px #585858);
-}
-
-/* CSS modal */
-.modal {
-  visibility: hidden;
-}
-.modal:target {
-  visibility: visible;
 }
 ```
 
