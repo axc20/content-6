@@ -4,12 +4,7 @@
   - Alternatives: fly.io, render
 - Next.js
 - TanStack
-- Python
-- Go
 - Fastify
-- Rust
-- Svelte
-- HTMX
 - OAuth
 - OpenTelemetry
 

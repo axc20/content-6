@@ -1,10 +1,3 @@
-# JS refresher
-
-## Storing values (by reference vs. value)
-
-- reference: non-primitive value (object, array, fn)
-- value: primitive value (string, number, boolean, null, undefined)
-
 ## Arrays
 
 ![jsFns](../../../assets/js_fns.png)
@@ -83,24 +76,5 @@ new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date); // → "Sa
 ### Other
 
 ```javascript
-// Function.prototype.bind()
-const module = {
-  x: 42,
-  getX: function () {
-    return this.x;
-  }
-};
-const unboundGetX = module.getX;
-unboundGetX(); // undefined
-
-const boundGetX = unboundGetX.bind(module);
-boundGetX(); // 42
-
-// Number
-Number('123');
-// Number.MAX_SAFE_INTEGER, Number.MIN_SAFE_INTEGER
-
-// global functions
-// isFinite(), isNaN(), parseFloat(), parseInt()
 // encodeURI(), encodeURIComponent(), decodeURI(), decodeURIComponent()
 ```

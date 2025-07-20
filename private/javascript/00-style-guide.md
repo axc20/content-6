@@ -1,113 +1,3 @@
-## booleans
-
-Boolean variables and functions that return boolean values should be named with one of these prefixes: `is`, `has`, `can`, `should`, `did`
-
-Examples: `isManagedAccount`, `hasChanges`, `shouldUpdate`
-
-## functions
-
-A well-named function describes what it will do. It should directly or indirectly answer:
-
-- What is the **action** being taken?
-- What is the **contenxt** being acted on?
-- What type of data will be returned?
-
-Examples: `getOrderType`, `isBuyOrder`, `handleBuyClick`
-
-| action (verb)    | usage case                                                                                                          |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------- |
-| apply            | updates multiple values in a target object                                                                          |
-| get              | returns some value immediately                                                                                      |
-| set              | assigns a value to some variable or object property                                                                 |
-| reset            | restores a variable or object to its initial value or state                                                         |
-| fetch            | permanently eliminates a value, often via an API call                                                               |
-| handle           | takes action in response to an event                                                                                |
-| render           | returns a `React` component                                                                                         |
-| format           | return an input in some predefined format, typically a string                                                       |
-| sanitize         | "cleaning" the input by removing unwanted characters                                                                |
-| transform        | converts some data source to a different structure                                                                  |
-| normalize        | takes some value and converts it to a common format or value                                                        |
-| create           | returns a new instance of some data structure                                                                       |
-| init, initialize | provides an initial or defaultvalue to a variable or state to an object                                             |
-| strip            | removes some component from a string                                                                                |
-| convert          | change a value from one type to another                                                                             |
-| sort             | sorts an array                                                                                                      |
-| find             | returns an item from a list matching some criteria; when returning index, index should be used as secondary context |
-| calculate        | applies a formula to the inputs and returns the result                                                              |
-
-## import organization
-
-Organizing import statements in a clean and consistent manner makes it easier to understand the dependencies required by your component.
-
-### custom styles
-
-```js
-import styles from './MyComponent.scss';
-```
-
-### external dependencies
-
-```js
-// react
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-
-// other external dependencies (alphabetical ordering)
-import classnames from 'classnames';
-import formatNumber from 'formatNumber';
-import typeChecker from 'typeChecker';
-```
-
-### components
-
-```js
-// project shared components
-import Footer from 'components/common/Footer';
-import Header from 'components/common/Header';
-
-// child components
-import Footer from './Footer';
-import Header from './Header';
-```
-
-### data layer interactions
-
-```js
-import { fetchQuoteDetails } from 'data/api/quoteInfo';
-import { transformQuoteDetail } from 'data/transforms';
-```
-
-### hooks
-
-```js
-// project shared custom hooks
-import useFetch from 'hooks/useFetch';
-import useObjectState from 'hooks/useObjectState';
-
-// component custom hooks
-import useFoo from './hooks/useFoo';
-import useBar from './hooks/useBar';
-```
-
-### utilities
-
-```js
-import { formatDateEST } from 'utils/formatters';
-import translate from 'utils/translate';
-```
-
-### constants
-
-```js
-import {
-  AccountType,
-  AccountTypeDescription,
-  AccountStatus,
-  AccountStatusDescription
-} from 'constants/account';
-import { DEFAULT_DATE_FORMAT } from 'constants/application';
-```
-
 ## Model-View-ViewModel
 
 MVVM is a design pattern used for user interfaces that allows for a separation of concerns. Models handle data access and business logic as well as application state for that business logic. Views display data to the user and handle events. ViewModels present data from the model to the view. In our applications, they also store view state and handle view logic.
@@ -154,34 +44,6 @@ class Application extends React.Component {
     return <SomeComponent prop={stateProperty} onChange={this.handleChange} />;
   }
 }
-```
-
-#### ApplicationViewModel
-
-```js
-// ApplicationViewModel.js
-import applicationModel from 'data/models/applicationModel';
-
-class ApplicationViewModel extends BaseViewModel {
-  static create() {
-    const models = { applicationModel };
-
-    return new ApplicationViewModel(models);
-  }
-
-  constructor(models) {
-    super();
-
-    Object.assign(this, models);
-  }
-
-  // @action?
-  setStateProperty(nextState) {
-    this.stateProperty = nextState;
-  }
-}
-
-export default ApplicationViewModel;
 ```
 
 #### ApplicationProvider
@@ -288,10 +150,6 @@ class OptionChainModel extends BaseModel {
 Models may also transform and/or aggregate data from the service into a format more usable by the frontend. Transform logic can also exist in the service file.
 
 ## style guide
-
-### arrow functions
-
-When using anonymous functions such as inline callback, use an arrow function as it creates a version of the function that executes in the context of `this` and is a more concise syntax. If the function is more complicated with a lot of logic, it may make sense to use a named function expression isntead.
 
 ### classes and constructors
 
