@@ -59,21 +59,6 @@ user.password = '654321'
 user.save
 ```
 
-### after_save callback
-
-- run after both the `create` and `save` methods are called on a model instance
-- allows you to perform some logic or action after the model instance has been successfully created or updated and saved to the database
-
-```ruby
-class User < ActiveRecord::Base
-  after_save :send_welcome_email
-
-  def send_welcome_email
-    # Send a welcome email to the user here.
-  end
-end
-```
-
 ### Testing
 
 - Factory Bot
