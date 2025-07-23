@@ -1,7 +1,6 @@
 ## Ruby on Rails
 
 - `cmd K` clears the console
-- https://github.com/Shopify/graphql-batch
 - [conditionally chain scopes](https://stackoverflow.com/questions/38136110/best-way-to-conditionally-chain-scopes)
 
 ```ruby
