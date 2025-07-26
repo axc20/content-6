@@ -43,3 +43,5 @@ https://course.fast.ai/
   - possible to do clip interrogation style: upload photo, see what prompt was used
 - [Synthesia](https://www.synthesia.io/) - create videos from plain text
 - [Scribe](https://getscribe.how/chrome) - auto-generated step-by-step guides
+
+https://github.com/x1xhlol/system-prompts-and-models-of-ai-tools
