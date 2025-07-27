@@ -151,83 +151,6 @@ Models may also transform and/or aggregate data from the service into a format m
 
 ## style guide
 
-### comparison operators & equality
-
-- **Objects** evaluate to `true`
-- **Undefined**, **Null** evaluates to `false`
-- **Booleans** evaluate to value of the boolean
-- **Numbers** evaluate to `false` if `+0`, `-0`, or `NaN`, otherwise `true`
-- **Strings** evaluate to `false` if an empty string `''`, otherwise `true`
-
-Use braces to create blocks in `case` and `default` clauses that contain lexical declarations (e.g. `let`, `const`, `function`, `class`). Why? Lexical declarations are visible in the entire `switch` block but only get initialized when assigned, which only happens when its `case` is reached. This causes problems when multiple `case` clauses attempt to define the same thing.
-
-```js
-// bad
-switch (foo) {
-  case 1:
-    let x = 1;
-    break;
-  case 2:
-    const y = 2;
-    break;
-  case 3:
-    function f() {}
-    break;
-  default:
-    class C {}
-}
-
-// good
-switch (foo) {
-  case 1: {
-    let x = 1;
-    break;
-  }
-  case 2: {
-    const y = 2;
-    break;
-  }
-  case 3: {
-    function f() {}
-    break;
-  }
-  default: {
-    class C {}
-  }
-}
-```
-
-### control statements
-
-```js
-// don't use selection operators in place of control statements
-// bad
-!isRunning && startRunning();
-
-// good
-if (!isRunning) {
-  startRunning();
-}
-```
-
-### events
-
-When attaching data payloads to events (DOM events), pass an object literal (also known as a "hash") instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event.
-
-```js
-// bad
-const event = new CustomEvent('foo-happens', fooId);
-el.dispatchEvent(event);
-document.addEventListener('foo-happens', (e, fooId) => {});
-
-// good
-const event = new CustomEvent('foo-happens', { data: { fooId } });
-el.dispatchEvent(event);
-document.addEventListener('foo-happens', (e, data) => {
-  // do something with data.fooId
-});
-```
-
 ### functions
 
 ```js
@@ -341,12 +264,6 @@ function example() {
 }
 ```
 
-### iterators
-
-Don't use iterators. Prefer JS higher-order functions instead of loops like `for-in` or `for-of`. Why? This enforces immutability, as dealing with pure functions that return values is easier to reason about than side effects.
-
-Use `map()`, `every()`, `filter()`, `find()`, `findIndex()`, `reduce()`, `some()` to iterate over arrays and `Object.keys()`, `Object.values()`, `Object.entries()` to produce arrays so you can iterate over objects.
-
 ### naming conventions
 
 Do not use trailing or leading underscores. JS does not have concept of privacy in terms of properties or methods. Although a leading underscore is a common convention to mean "private", in fact, these properties are fully public and are part of your public API contract. If you want something to be "private", it must not be observably present.
@@ -379,72 +296,6 @@ const httpRequests = []; // also good
 const requests = []; // best
 ```
 
-### objects
-
-```js
-// use object method shorthand
-// bad
-const atom = {
-  value: 1,
-  addValue: function (value) {
-    return atom.value + value;
-  }
-};
-
-// good
-const atom = {
-  value: 1,
-  addValue(value) {
-    return atom.value + value;
-  }
-};
-
-// prefer object spread operator to shallow-copy objects
-// bad
-const original = { a: 1, b: 2 };
-const copy = Object.assign({}, original, { c: 3 });
-delete copy.a; // bad, mutates original
-
-// good
-const original = { a: 1, b: 2 };
-const copy = { ...original, c: 3 };
-const { a, ...noA } = copy; // noA => { b: 2, c: 3 }
-```
-
-### references
-
-```js
-// note that both let and const are block-scoped
-{
-  let a = 1;
-  const b = 1;
-}
-console.log(a); // ReferenceError
-console.log(b); // ReferenceError
-```
-
-### standard library
-
-The [Standard Library](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects) contains utilities that are functionally broken out but remain for legacy reasons.
-
-```js
-// use Number.isNaN instead of global isNaN
-// bad
-isNaN('1.2.3'); // true
-
-// good
-Number.isNaN('1.2.3'); // false
-Number.isNaN(Number('1.2.3')); // true
-
-// use Number.isFinite instead of global isFinite
-// bad
-isFinite('2e3'); // true
-
-// good
-Number.isFinite('2e3'); // false
-Number.isFinite(parseInt('2e3', 10)); // true
-```
-
 ### type casting & coercion
 
 ```js
@@ -460,22 +311,4 @@ const val = parseInt(inputValue, 10);
 const age = 0;
 const hasAge = !!age; // good
 const hasAge = Boolean(age); // best
-```
-
-If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use bitshift for performance reasons, leave a comment explaining why and what you're doing.
-
-```js
-/**
- * parseInt was the reason my code was slow
- * Bitshifting the String to coerce it to a Number made it a lot faster
- */
-const val = inputValue >> 0;
-```
-
-Be careful when using bitshift operations. Numbers are represented as 64-bit values, but bitshift operations always return a 32-bit integer. Bitshift can lead to unexpected behavior for integer values larger than 32 bits. Largest signed 32-bit Int is 2,147,483,647.
-
-```js
-2147483647 >> 0; // => 2147483647
-2147483648 >> 0; // => -2147483648
-2147483649 >> 0; // => -2147483647
 ```

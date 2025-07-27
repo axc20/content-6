@@ -1,24 +1,3 @@
-## Arrays
-
-![jsFns](../../../assets/js_fns.png)
-
-## Scope
-
-```javascript
-// let has block scope ... think curly brackets that isn't an object
-const fn = () => {
-  let where = 'outer';
-  {
-    let where = 'inner';
-  }
-  return where;
-};
-fn(); // outer
-
-// a fn's local scope variables are not available outside that fn,
-// regardless of the context it's called in
-```
-
 ## Destructuring
 
 ```js
@@ -41,16 +20,6 @@ const suspects = [
   { name: 'Clone', color: 'red' }
 ];
 const [{ color: firstColor }, { color: secondColor }] = suspects;
-```
-
-## Expressions and operators
-
-```js
-// optional chaining
-obj.val?.prop;
-obj.val?.[expr];
-obj.arr?.[index];
-obj.func?.(args);
 ```
 
 ## Standard built-in objects
