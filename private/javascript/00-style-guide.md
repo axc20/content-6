@@ -312,3 +312,27 @@ const age = 0;
 const hasAge = !!age; // good
 const hasAge = Boolean(age); // best
 ```
+
+---
+
+COLLAPSe
+
+## Standard built-in objects
+
+### Date
+
+```javascript
+const date = new Date(Date.UTC(2021, 11, 20, 3, 0, 0));
+date.toLocaleString('en-US'); // → "12/19/2012, 10:00:00 PM"
+// Date.now();
+// new Date('1/7/2021') // .getFillYear(), .getMonth(), .getDate()
+```
+
+### Intl
+
+```javascript
+const date = new Date(Date.UTC(2020, 11, 20, 3, 23, 16, 738));
+new Intl.DateTimeFormat('en-US').format(date); // → "12/19/2020"
+new Intl.DateTimeFormat('en-US', { dateStyle: 'full' }).format(date); // → "Saturday, December 19, 2020"
+// Intl.NumberFormat
+```
