@@ -12,7 +12,6 @@ Please add a protagonist to this description center stage.
 
 ## PROMPTS
 
-- Tell me {number} things about {topic/idea/event} that most people don't know about.
 - List {number} ways to get better at {activity} like {role model}.
 - Generate {number} {synonyms, antonyms, metaphors, analogies} for {word}.
 - Imagine you are {profession/expertise}. Now debate with me till I say the word {unusual word}.
