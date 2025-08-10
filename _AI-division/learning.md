@@ -1,21 +1,3 @@
-## Art
-
-Please give me a specific visual description for a SUBJECT using only visual adjectives and nouns. Write the answer with traits separated by commas, include references to artists, movies or subcultures, include colors, mood, lighting, aesthetic.
-
-Please add a protagonist to this description center stage.
-
-## Misc
-
-- **Branding**: Give me QUANTITY names for a BUSINESS IDEA/TOPIC.
-- **Jokes**: Write a JOKE TYPE about a SUBJECT, incorporating SPECIFIC ITEM OR DETAIL.
-  - Type of joke: pun, one-liner, knock-knock, story, riddle, insult/roast, observational humor, satire/parody, sarcasm/dry, irony, physical comedy/gestures, character-based, improvisational, political, ethnic/cultural
-
-## PROMPTS
-
-- List {number} ways to get better at {activity} like {role model}.
-- Generate {number} {synonyms, antonyms, metaphors, analogies} for {word}.
-- Imagine you are {profession/expertise}. Now debate with me till I say the word {unusual word}.
-
 ## AI Tools
 
 - [OpenAI](https://openai.com/)
