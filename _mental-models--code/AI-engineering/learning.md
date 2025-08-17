@@ -1,18 +1,3 @@
-## AI Tools
-
-- [OpenAI](https://openai.com/)
-  - DALLE2 - text2image
-  - Whisper - English speech recognition
-  - GPT3
-  - Codex
-- [Replika](https://replika.ai/)
-- [Jasper](https://www.jasper.ai/)
-- [AssemblyAI](https://www.assemblyai.com/)
-- [ClipDrop](https://clipdrop.co/)
-- [Adept](https://www.adept.ai/)
-
----
-
 https://huggingface.co/docs/transformers/index
 https://course.fast.ai/
 
