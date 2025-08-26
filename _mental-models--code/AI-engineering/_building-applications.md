@@ -1,7 +1,3 @@
-# Building Applications
-
-- [replicate](https://replicate.com/)
-
 ## Foundation Models
 
 - [Google AI Studio](https://ai.google.dev/aistudio)
