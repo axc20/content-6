@@ -1,8 +1,3 @@
-## Foundation Models
-
-- [Google AI Studio](https://ai.google.dev/aistudio)
-  - Gemini 1.5 Flash-8B - lightweight, cheap model (with caching enabled, ~$0.01/million tokens); ideal for high-volume tasks like chatbots, transcription, and long-context translation
-
 ## Frameworks
 
 - [Langchain](https://github.com/langchain-ai/langchain)

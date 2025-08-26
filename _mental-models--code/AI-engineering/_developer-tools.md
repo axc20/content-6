@@ -1,10 +1,5 @@
-# Developer Tools
-
 ## Foundation Models
 
-- Claude
-  - Projects
-  - Model Context Protocol (MCP)
 - Gemini 2.0 Flash
   - https://www.sergey.fyi/articles/gemini-flash-2
 - OpenAI
