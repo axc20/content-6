@@ -86,10 +86,6 @@ class Organization < ApplicationRecord
       .pluck('people.id')
     Person.find(weps_ids)
   end
-
-  def weps_emails
-    Account.where(person_id: weps.pluck(:id)).pluck(:email_address).uniq.join(', ')
-  end
 end
 ```
 
