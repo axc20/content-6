@@ -22,20 +22,6 @@ Organization.where("settings @> ?", '{"review": {"basic": "organization", "ultra
 Organization.find(12).members.map { |m| m.person&.account&.email_address }
 ```
 
-### Destroy
-
-- used to delete a record from the database
-- typically called on an instance of a model class
-- will also trigger callbacks and hooks associated with the model, such as `before_destroy` and `after_destroy` callbacks; these callbacks can be used to perform additional actions before or after the record is deleted, such as sending an email notification or cleaning up related data
-- `.destroy` will raise error if record is not found or cannot be deleted due to a database constraint; this allows you to handle these errors in your code and take action such as displaying an error message to user
-- `.destroy!` will raise an exception; this means that the method will immediately halt the execution of your code; this can be useful if you want to ensure that your code always executes correctly and do not want to handle potential errors manually
-
-```ruby
-user = User.find(123)
-user.destroy
-user.destroy!
-```
-
 ### first_or_create, find_or_initialize_by
 
 ```ruby
