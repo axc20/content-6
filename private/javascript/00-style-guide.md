@@ -151,41 +151,6 @@ Models may also transform and/or aggregate data from the service into a format m
 
 ## style guide
 
-### functions
-
-```js
-// never name a paramater arguments, as this will take precedence over
-// the arguments object that is given to every function scope
-// bad
-function foo(name, options, arguments) {}
-
-// good
-function foo(name, options, args) {}
-
-// never use arguments; opt to use rest syntax ...
-// rest is explicit about which arguments you want pulled
-// rest arguments are a real Array and not merely Array-like like arguments
-// bad
-function concatenateAll() {
-  const args = Array.prototype.slice.call(arguments);
-  return args.join('');
-}
-
-// good
-function concatenateAll(...args) {
-  return args.join('');
-}
-
-// prefer the use of spread operator ... to call variadic functions
-// bad
-const x = [1, 2, 3, 4, 5];
-console.log.apply(console, x);
-
-// good
-const x = [1, 2, 3, 4, 5];
-console.log(...x);
-```
-
 ### hoisting
 
 `var` declarations get hoisted to the top of their closest enclosing function scope, but their assignment does not. `const` and `let` declarations are blessed with a new concept called Temporal Dead Zones.
