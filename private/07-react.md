@@ -9,5 +9,6 @@
   - [JSX.Element vs ReactNode vs ReactElement](https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement/72353143#72353143)
   - [render prop pattern](https://stackoverflow.com/questions/52552710/use-of-context-api-vs-cloneelement-for-passing-down-props-for-direct-descendent)
 - context
-  - [cloneElement vs createcContext | RadioGroup](https://github.com/uber/baseweb/issues/131)
+  - [cloneElement vs createContext | RadioGroup](https://github.com/uber/baseweb/issues/131)
   - avoid props drilling
+    s
