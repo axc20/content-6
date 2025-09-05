@@ -20,18 +20,3 @@ const universeCount = Number(
   /class=\"count-text\"[^0-9]*([0-9]*)/g.exec(response.body)[1]
 );
 ```
-
-## Utils
-
-```js
-// generates a random integer between min and max (inclusive)
-const randInt = (min, max) => {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-};
-```
-
-## Export an imported module in single line
-
-```js
-export { default as Module } from './Module/Module';
-```
