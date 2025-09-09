@@ -35,12 +35,6 @@
 
 ## Markup
 
-### Best Practices
-
-- When using `target="_blank"`. add `rel="noreferrer noopener"` to avoid exploitation of the `window.opener` API. See [Anchor element - security and privacy (MDN)](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#security_and_privacy) and [Target="\_blank" - the most underestimated vulnerability ever](https://www.jitbit.com/alexblog/256-targetblank--the-most-underestimated-vulnerability-ever).
-- Add `role="list"` to `<ul>`'s affected by `list-style: none;`. This is a robust fix in reaction to a decision made by Apple, where any unordered list with `list-style: none;` applied to its list items is not treated as an unordered list semantically.
-- Frequently asked questions (<abbr title="Frequently Asked Questions">FAQ</abbr>) should be used with `<abbr>` and is plural, so it doesn't require an "s" (FAQs).
-
 ### Correct Reading Sequence
 
 Documents should have a logical reading flow. Whenever there is content with a meaningful sequence, that sequence should be refected in the DOM. It is recommended to separate content from layout, such that content sequence makes sense without styling and CSS handles positioning and layout. See [positioning content based on structural markup (W3C)](https://www.w3.org/WAI/WCAG21/Techniques/css/C6) and [meaningful sequence (WCAG)](https://www.w3.org/TR/WCAG21/#meaningful-sequence).
