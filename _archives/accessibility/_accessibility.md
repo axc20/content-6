@@ -35,34 +35,6 @@
 
 ## Markup
 
-### Correct Reading Sequence
-
-Documents should have a logical reading flow. Whenever there is content with a meaningful sequence, that sequence should be refected in the DOM. It is recommended to separate content from layout, such that content sequence makes sense without styling and CSS handles positioning and layout. See [positioning content based on structural markup (W3C)](https://www.w3.org/WAI/WCAG21/Techniques/css/C6) and [meaningful sequence (WCAG)](https://www.w3.org/TR/WCAG21/#meaningful-sequence).
-
-```html
-<!-- DO -->
-<form>
-  <fieldset>
-    <legend>How should we address you?</legend>
-    <label for="name">Your nickname</label>
-    <input autocomplete="nickname" id="name" name="nickname" type="text" />
-  </fieldset>
-  <fieldset>
-    <!-- Note that this is not the first item in the form -->
-    <legend>Next, pick a color for your profile</legend>
-    <label for="color">Favorite color</label>
-    <select id="color" name="colors">
-      <option value="clear">clear</option>
-      <option value="red">red</option>
-      <option value="blue">blue</option>
-      <option value="green">green</option>
-    </select>
-  </fieldset>
-  <!-- The submit button should be the last item in the form -->
-  <button type="submit">Submit</button>
-</form>
-```
-
 ### Headings
 
 Headings describe the structure of content and its organization. Clear and descriptive headings make it easier to find information and understand the relationships between sections. Those using assistive technology may read them in an automatically-generated list and can jump to those sections.
