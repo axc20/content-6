@@ -1,8 +1,5 @@
 ## Ruby on Rails
 
-- `cmd K` clears the console
-- [conditionally chain scopes](https://stackoverflow.com/questions/38136110/best-way-to-conditionally-chain-scopes)
-
 ```ruby
 a, b = "review_abstractions.ggg.5".split('.', 2)
 
